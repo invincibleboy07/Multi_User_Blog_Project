@@ -25,6 +25,8 @@ This project works on Google App Engine hence you need to install GAE. Steps for
 * Install and configure Google App Engine from [here](https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python)
 * You need to create your  Google App Engine Account to host projects.
 * Further assistance for GAE installation and configuration can be found [here](https://drive.google.com/file/d/0Byu3UemwRffDbjd0SkdvajhIRW8/view)
+* Now to run locally, go to the project folder and open terminal there.
+* now run command dev_appserver.py . and it will run a localhost server.
 * Run Localhost server, make changes as per needed and test locally.
 * Finally upload to Google App engine as given in above assistance link.
 * Now you can access from the unique url provided after you uploaded.
