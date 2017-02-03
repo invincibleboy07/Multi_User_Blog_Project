@@ -38,6 +38,7 @@ This project contains following files and folders:
 Multi User Blog Project
 |   blog.py
 |   app.yaml
+|   modals.py
 |
 |___static
 |   |___css ( contains all css styling )
