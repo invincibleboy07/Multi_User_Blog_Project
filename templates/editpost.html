@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="error">
+    {{error}}
+</div>
+
+<div class="form-wrapper">
+
+    <form method="post" class="edit-form">
+        <div class="edit-header">
+            <h2> EDIT POST</h2>
+        </div>
+        <div class="edit-title">
+            <h3>Title:</h3>
+            <input type="text" name="title" value={{ subject}}>
+        </div>
+        <div class="edit-content">
+            <h3>Content:</h3>
+            <textarea class="edit-textarea" name="content" value={{content}}>{{content}}</textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" name="submit">
+        <script>
+            function goBack()
+              {
+              window.history.back()
+              }
+        </script>
+        <button class="btn btn-primary" onclick="goBack()">Cancel</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

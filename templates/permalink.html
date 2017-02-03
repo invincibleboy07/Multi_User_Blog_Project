@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="error">
+{{error}}
+</div>
+<div class="full-post">
+    <div class="edit-delete">
+            <div class="edit">
+                <a href="/editpost/{{post.key().id()}}" class="btn btn-primary btn-editpost">Edit</a>
+            </div>
+            <div class="delete">
+                <a href="/deletepost/{{post.key().id()}}" class="btn btn-primary btn-deletepost">Delete</a>
+            </form>
+            </div>
+    </div>
+
+    <div class="full-post-only">
+        <div class="full-post-title">
+              {{post.subject}}
+        </div>
+
+        <div class="full-post-content">
+            {{post.content | safe}}
+        </div>
+
+        <div class="full-post-date-username">
+            <div class="full-post-date">
+                  {{post.created.strftime("%b %d, %Y")}}
+            </div>
+
+            <div class="full-post-username">
+                - {{post.username}}
+            </div>
+        </div>
+    </div>
+<!-- for like button -->
+    <div class="like-form">
+        <form method="post">
+            {% if dic['isliked'] == True %}
+                <input type="submit" value="Submit" name="submit" class="heart-button-liked">
+                <input type="hidden" name="liked" value="True">
+            {% else %}
+                <!-- <button class="btn btn-primary">Like</button> -->
+
+                <input type="submit" value="Submit" name="submit" class="heart-button-unliked">
+                <input type="hidden" name="liked" value="False">
+            {% endif %}
+            {{dic['num_likes']}}
+        </form>
+    </div>
+
+
+
+
+    <div class="comment">
+        <form method="post">
+            <textarea name="comment" class="comment-textarea"></textarea>
+            <input type="hidden" name="comment-clicked" value="clicked">
+            <button>comment</button>
+        </form>
+    </div>
+
+    <hr class="horizontal-line">
+
+    <div class="comments-wrapper">
+    {% for c in comments%}
+        <div class="comment-list">
+
+            <div class="comment-commenter">
+                <div class="comment-content">{{c.content.replace('\n', '<br>')}}</div>
+                <div class="commenter">- {{c.username}}</div>
+            </div>
+
+            <div class="edit-delete-comment">
+                <div class="edit-comment">
+                    <a href="/editcomment/{{c.key().id()}}" class="btn btn-primary btn-editpost">Edit
+                    </a>
+                </div>
+                <div class="delete-comment">
+                    <a href="/deletecomment/{{c.key().id()}}" class="btn btn-primary btn-editpost">delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    {%endfor%}
+    </div>
+</div>
+
+{% endblock %}

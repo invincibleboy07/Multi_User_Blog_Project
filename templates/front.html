@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="new-post">
+    <blockquote class="quote">
+        "There is no greater agony than bearing an untold story inside you."
+    </blockquote>
+    <div class="add-blog">
+        <a href="/newpost" class="btn btn-primary">ADD BLOG</a>
+    </div>
+</div>
+
+{% if post_deleted %}
+    <div class="deleted-message">
+        post deleted
+    </div>
+{% endif %}
+
+    <div class="blogs-preview">
+
+            {% for p in posts %}
+                <!-- due to eventual consistency -->
+                {% if p.key().id()|string != post_deleted|string %}
+
+                    {{ p.render() | safe }}
+
+                {%endif%}
+                <br><br>
+            {% endfor %}
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+
+
+  <div class="post">
+      <a href="/{{p.key().id()}}">
+          <div class="post-title">
+              {{p.subject}}
+          </div>
+
+          <div class="hr-line">
+              <hr>
+          </div>
+
+          <div class="post-content">
+            {{p._render_text | safe}}
+            <!-- <a href="/{{p.key().id()}}" class="btn btn-primary btn-signup">See more</a> -->
+          </div>
+
+          <div class="hr-line">
+              <hr>
+          </div>
+
+          <div class="date-username">
+            <div class="post-date">
+            {{p.created.strftime("%b %d, %Y")}}
+            </div>
+
+            <div class="post-username">
+                - {{p.username}}
+            </div>
+          </div>
+      </a>
+  </div>
+

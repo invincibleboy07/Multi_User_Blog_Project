@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <body>
+    <div class="add-header">
+        <h2>Welcome, {{username}}!</h2>
+    </div>
+
+    <div class="add-blog">
+    Add your own Blog:
+    <a href="/newpost" class="btn btn-primary">ADD</a>
+    </div>
+    <div class="read-blog">
+    Read Blogs
+    <a href="/" class="btn btn-primary">Read</a>
+    </div>
+
+    <script type="text/javascript">
+
+        toogle({{p}})
+    </script>
+
+
+
+
+  </body>
+{% endblock %}

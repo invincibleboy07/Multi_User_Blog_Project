@@ -1,0 +1,74 @@
+
+<link  rel="stylesheet" href="../static/css/signup.css" />
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="form-wrapper">
+
+        <form method="post" class="new-form">
+            <h2>Signup</h2>
+            <table>
+              <tr class="t-row">
+                <td class="label">
+                  Username
+                </td>
+                <td>
+                      <input type="text" name="username" value="{{username}}">
+                </td>
+                <td class="error">
+                  {{error_username}}
+                </td>
+              </tr>
+
+              <tr class="t-row">
+                <td class="label">
+                  Password
+                </td>
+                <td>
+                  <input type="password" name="password" value="">
+                </td>
+                <td class="error">
+                  {{error_password}}
+                </td>
+              </tr>
+
+              <tr class="t-row">
+                <td class="label">
+                  Verify Password
+                </td>
+                <td>
+                  <input type="password" name="verify" value="">
+                </td>
+                <td class="error">
+                  {{error_verify}}
+                </td>
+              </tr>
+
+              <tr class="t-row">
+                <td class="label">
+                  Email (optional)
+                </td>
+                <td>
+                  <input type="text" name="email" value="{{email}}">
+                </td>
+                <td class="error">
+                  {{error_email}}
+                </td>
+              </tr>
+            </table>
+
+            <input type="submit" class="btn-primary btn">
+            <div class="login">
+              Have account?
+              <a href="/login" class="btn btn-primary">Log In</a>
+
+            </div>
+        </form>
+
+
+    </div>
+ {% endblock %}
+
