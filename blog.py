@@ -381,7 +381,7 @@ class PostPage(BlogHandler):
             # check is user clicked comment or like
             if is_comment_clicked:
                 comment = self.request.get('comment')
-                #checkif comment is empty
+                # checkif comment is empty
                 if comment:
                     self.add_comment(comment, post_id)
                     self.redirect('/%s' % (post_id))
