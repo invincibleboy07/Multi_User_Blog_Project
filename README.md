@@ -20,7 +20,7 @@ You can see the project live [here](https://hello-world-156305.appspot.com/)
     3) Javascript
 
 ## Requirements and Installation
-This project works on Google App Engine hence you need to instal GAE. Steps for installation for GAE and other things is given below: 
+This project works on Google App Engine hence you need to install GAE. Steps for installation for GAE and other things is given below: 
 * Python is used hence install python from [here](https://www.python.org/downloads/)
 * Install and configure Google App Engine from [here](https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python)
 * You need to create your  Google App Engine Account to host projects.
